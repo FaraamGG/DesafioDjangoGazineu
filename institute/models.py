@@ -11,7 +11,7 @@ class Course(models.Model):
     duration_unit = models.CharField(max_length=65)
     total_hours = models.IntegerField()
     professor = models.CharField(max_length=65)
-    cover = models.ImageField(upload_to='institute/img/')
+    cover = models.ImageField(upload_to='institute/static/images/courses_img')
 
     def __str__(self):
         return self.title

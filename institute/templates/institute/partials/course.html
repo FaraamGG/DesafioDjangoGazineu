@@ -1,0 +1,61 @@
+{% load static %}
+
+<div class = "course course-list-item">
+
+    <div class="course-cover">
+        <a href="{% url 'institute:home' %}">
+            <img src="{% static 'institute/images/covers/tec.jpg' %}" alt="temp">
+        </a>
+    </div>
+
+    <div class="course-title-container">
+        <a href="{% url 'institute:home' %}">
+            <h2 class = "recipe-title"> Curso exemplo </h2>
+        </a>
+    </div>
+
+    <div class="course-teacher-container">
+        <div class="course-teacher">
+            <a href="{% url 'institute:home' %}">
+                <i class="fa-solid fa-user-tie"></i>
+                Professor: Dummy
+            </a>
+        </div>
+    </div>
+
+    <div class="course-content">
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tenetur nesciunt ipsum magni dolores sint repudiandae esse quaerat, exercitationem odit! Dolor, quas. Labore earum, sit aut tempora dolore eaque optio?</p>
+
+    </div>
+
+    <div class="course-meta-container">
+
+        <div class="course-meta course-duration">
+            <h3 class="course-meta-title"><i class="fa-solid fa-calendar-days"></i> Período</h3>
+            <div class="recipe-meta-title">
+                06/22 até 08/22
+            </div>
+        </div>
+
+        <div class="course-meta course-hours">
+            <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> Tempo de aula</h3>
+            <div class="recipe-meta-text">
+
+                40 horas
+
+            </div>
+        </div>    
+        
+    </div>
+
+    <footer class="course-footer">
+
+        <a class="course-read-more button button-dark button-full-width" href="{% url 'institute:home' %}">
+            <i class="fas fa-eye"></i>
+            <span>ver mais...</span>
+        </a>
+    
+   </footer>
+
+</div>
