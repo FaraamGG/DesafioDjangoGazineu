@@ -1,0 +1,121 @@
+:root {
+
+    --color-primary: #20a6c7;
+    --color-secundary: #15364e;
+
+    --color-white: #fff;
+
+    --color-gray-0: #f9f9f9;
+    --color-gray-1: #e0e0e0;
+    --color-gray-2: #c7c7c7;
+    --color-gray-3: #aeaeae;
+
+    --font-primary: sans-serif;
+    --font-headings: 'Roboto Slab', serif;
+
+    --spacing-medium: 3rem;
+    --spacing-large: 4rem;
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+
+}
+
+html {
+
+    font-size: 62.5%;
+
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--font-primary);
+    background-color: var(--color-gray-1);
+}
+
+.container {
+    max-width: 144rem;
+    margin: 0 auto;
+    padding: var(--spacing-medium);
+}
+
+.main-header {
+
+    padding: 1rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow:  0 .4rem 3rem 0 rgb(0, 0, 0, 0.2);
+    
+}
+
+.main-header a {
+
+    text-decoration: none;
+
+}
+
+.main-logo {
+
+    text-decoration: none;
+
+}
+
+.logo {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.logo img {
+    
+    margin: 0 auto;
+    max-height: 8rem;
+
+}
+
+.company-name {
+
+    color: var(--color-secundary);
+    margin-top: .3rem;
+
+}
+
+.main-menu {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    font-size: 1.8rem;
+
+}
+
+.menu {
+
+    height: fit-content;
+    padding: .8rem 1.2rem;
+    border-radius: 3rem;
+    color: var(--color-secundary);
+
+}
+
+.signup {
+
+    color: var(--color-secundary);
+    background-color: var(--color-primary);
+
+}
+
+.sign:hover {
+
+    background-color: var(--color-secundary);
+    color: var(--color-white);
+
+}
