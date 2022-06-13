@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.urls import path
 
-from instituto import views
+from institute import views
 
-app_name = 'instituto'
+app_name = 'institute'
 
 urlpatterns = [
     path('', views.home, name="home"),
