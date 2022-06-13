@@ -1,0 +1,35 @@
+{% load static %}
+
+<header class="main-header-container">
+    <div class="main-header">
+        <div class ="main-logo">
+
+            <a href="{% url 'instituto:home' %}">
+                <div class="logo">
+                        <img src="{% static 'instituto/img/logo.png' %}" alt="logo">
+                </div>
+            </a>
+
+        </div>
+
+        <div class="main-menu">
+
+            <a href="{% url 'instituto:home' %}">
+                <div class="menu">Sobre a instuição</div>
+            </a>
+
+            <a href="{% url 'instituto:home' %}">
+                <div class="menu">Contato</div>
+            </a>
+
+            <a href="{% url 'instituto:home' %}">
+                <div class="signin menu sign">Já sou aluno</div>
+            </a>
+            
+            <a href="{% url 'instituto:home' %}">
+                <div class="signup menu sign">Quero ser aluno</div>
+            </a>
+            
+        </div>
+    </div>
+</header>
