@@ -19,7 +19,6 @@ class Course(models.Model):
     ends_at = models.DateTimeField(default=now)
     total_hours = models.IntegerField()
     more_info = models.TextField(default="")
-    #teacher = models.CharField(max_length=65)
     cover = models.ImageField(
         upload_to='institute/covers/')
     is_published = models.BooleanField(default=False)
