@@ -4,12 +4,16 @@ from django.utils.timezone import now
 # Create your models here.
 
 
+# Modelo do professor
+
 class Teacher(models.Model):
     name = models.CharField(max_length=65)
 
     def __str__(self):
         return self.name
 
+
+# Modelo dos cursos
 
 class Course(models.Model):
     title = models.CharField(max_length=65)

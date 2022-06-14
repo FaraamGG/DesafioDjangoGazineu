@@ -5,8 +5,8 @@ from django.shortcuts import render
 from .models import Course
 
 
-# Create your views here.
 def home(request):
+    # Queryset de todos os cursos publicados listados por ordem de id decrescente
     courses = Course.objects.filter(is_published=True).order_by('-id')
     return render(request, 'institute/pages/home.html', context={
         'courses': courses,
@@ -14,6 +14,7 @@ def home(request):
 
 
 def course(request, course_id):
+    # Queryset dos cursos filtrados por id, first para selecionar o objeto
     course = Course.objects.filter(id=course_id).first()
     return render(request, 'institute/pages/course-view.html', context={
         'course': course,
@@ -23,6 +24,7 @@ def course(request, course_id):
 
 def teacher(request, teacher_id):
 
+    # Queryset dos cursos filtrado pelo id da foreign key 'teacher' ordenado por id decrescente
     courses = Course.objects.filter(
         teacher__id=teacher_id, is_published=True).order_by('-id')
 
@@ -38,6 +40,8 @@ def search(request):
     if not search_term:
         raise Http404
 
+    # Queryset dos cursos filtrados por título ou descrição ordenado por id decrescente
+    # A cláusula where utiliza do LIKE para encontrar título ou descrição semelhantes ao termo de pesquisa
     courses = Course.objects.filter(
         Q(
             Q(title__icontains=search_term) | Q(
