@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'institute/partials/head.html' %}
+    <title>{% block title %}{% endblock title %} Instituto</title>
+</head>
+
+<body>
+
+    {% include 'institute/partials/header.html' %}
+
+
+    {% block content %}{% endblock content %}
+
+
+    {% include 'institute/partials/footer.html' %}
+
+</body>
+
+</html>

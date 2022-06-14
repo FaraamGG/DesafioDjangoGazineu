@@ -1,16 +1,14 @@
-{% load static %}
-
 <div class = "course course-list-item">
 
     <div class="course-cover">
-        <a href="{% url 'institute:home' %}">
-            <img src="{% static 'institute/images/covers/tec.jpg' %}" alt="temp">
+        <a href="{% url 'institute:course' course.id %}">
+            <img src="{{course.cover.url}}" alt="temp">
         </a>
     </div>
 
     <div class="course-title-container">
-        <a href="{% url 'institute:home' %}">
-            <h2 class = "recipe-title"> Curso exemplo </h2>
+        <a href="{% url 'institute:course' course.id %}">
+            <h2 class = "course-title"> {{ course.title }} </h2>
         </a>
     </div>
 
@@ -18,14 +16,14 @@
         <div class="course-teacher">
             <a href="{% url 'institute:home' %}">
                 <i class="fa-solid fa-user-tie"></i>
-                Professor: Dummy
+                Professor: {{ course.teacher }}
             </a>
         </div>
     </div>
 
     <div class="course-content">
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tenetur nesciunt ipsum magni dolores sint repudiandae esse quaerat, exercitationem odit! Dolor, quas. Labore earum, sit aut tempora dolore eaque optio?</p>
+        <p>{{ course.description }}</p>
 
     </div>
 
@@ -33,29 +31,51 @@
 
         <div class="course-meta course-duration">
             <h3 class="course-meta-title"><i class="fa-solid fa-calendar-days"></i> Período</h3>
-            <div class="recipe-meta-title">
-                06/22 até 08/22
+            <div class="course-meta-title">
+                {{ course.starts_at|date:"d/m/Y" }} até {{ course.ends_at|date:"d/m/Y" }}
             </div>
         </div>
 
         <div class="course-meta course-hours">
-            <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> Tempo de aula</h3>
-            <div class="recipe-meta-text">
+            <h3 class="course-meta-title"><i class="fas fa-stopwatch"></i> Tempo de aula</h3>
+            <div class="course-meta-text">
 
-                40 horas
+                {{ course.total_hours }} Horas
 
             </div>
         </div>    
         
     </div>
 
+    {% if is_course is True %}
+    <div class="course-more-info-container">
+
+        <div class="more-info-title">
+            
+            <i class="fa-solid fa-circle-info"></i>
+            <h3>Mais informação</h3>
+
+        </div>
+
+        <div class="coures-more-info">
+
+            {{course.more_info}}
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    {% if is_course is not True %}
     <footer class="course-footer">
 
-        <a class="course-read-more button button-dark button-full-width" href="{% url 'institute:home' %}">
+        <a class="course-read-more button button-dark button-full-width" href="{% url 'institute:course' course.id %}">
             <i class="fas fa-eye"></i>
             <span>ver mais...</span>
         </a>
     
    </footer>
+   {% endif %}
 
 </div>

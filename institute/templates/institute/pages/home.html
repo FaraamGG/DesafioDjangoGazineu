@@ -1,15 +1,10 @@
-{% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
+{% extends 'global/base.html' %}
 
-<head>
-    {% include 'institute/partials/head.html' %}
-</head>
+{% block title %}Home | {% endblock title %}
 
-<body>
-    
-    {% include 'institute/partials/header.html' %}
+{% block content %}
+
 
     {% include 'institute/partials/main-home.html' %}
 
@@ -19,16 +14,16 @@
 
             <h2>Nossos cursos</h2>
 
+            {% include 'institute/partials/search.html' %}
+
             <div class="our-courses">
 
-                {% include 'institute/partials/course.html' %}
-                {% include 'institute/partials/course.html' %}
-                {% include 'institute/partials/course.html' %}
-                {% include 'institute/partials/course.html' %}
-                {% include 'institute/partials/course.html' %}
-                {% include 'institute/partials/course.html' %}
-                {% include 'institute/partials/course.html' %}
-                {% include 'institute/partials/course.html' %}
+                {% for course in courses %}
+
+                    {% include 'institute/partials/course.html' %}
+
+                {% endfor %}
+                
 
             </div>
 
@@ -37,6 +32,4 @@
 
     </div>
 
-</body>
-
-</html>
+{% endblock content %}
