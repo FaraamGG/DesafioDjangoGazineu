@@ -10,6 +10,7 @@ app_name = 'institute'
 urlpatterns = [
     path('', views.home, name="home"),
     path('course/search/', views.search, name="search"),
+    path('course/teacher/<int:teacher_id>', views.teacher, name="teacher"),
     path('course/<int:course_id>/', views.course, name="course"),
 ]
 

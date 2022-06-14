@@ -1,0 +1,33 @@
+{% extends 'global/base.html' %}
+
+{% block title %}{{ page_title }} | {% endblock title %}
+
+
+{% block content %}
+<div class="main-courses-container">
+    <div class="main-courses container">
+
+        <h2>Cursos do professor {{ teacher }}</h2>
+
+        {% include 'institute/partials/search.html' %}
+
+        
+
+        <div class="our-courses">
+            {% for course in courses %}
+
+
+                {% include 'institute/partials/course.html' %}
+                
+                
+                {% empty %}
+                <div class="center m-y">
+                    <h1>Nenhum curso encontrado aqui</h1>
+                </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

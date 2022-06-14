@@ -21,6 +21,17 @@ def course(request, course_id):
     })
 
 
+def teacher(request, teacher_id):
+
+    courses = Course.objects.filter(
+        teacher__id=teacher_id, is_published=True).order_by('-id')
+
+    return render(request, 'institute/pages/teacher.html', context={
+        'courses': courses,
+        'teacher': courses[0].teacher.name
+    })
+
+
 def search(request):
     search_term = request.GET.get('q', '').strip()
 

@@ -14,7 +14,7 @@
 
     <div class="course-teacher-container">
         <div class="course-teacher">
-            <a href="{% url 'institute:home' %}">
+            <a href="{% url 'institute:teacher' course.teacher.id %}">
                 <i class="fa-solid fa-user-tie"></i>
                 Professor: {{ course.teacher.name }}
             </a>
